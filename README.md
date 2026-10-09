@@ -2,3 +2,4 @@
 
 Learning Technical skills like html,css and js
 
+updating it
