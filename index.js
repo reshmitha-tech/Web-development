@@ -22,3 +22,23 @@ function toggled()
     document.getElementById("gender").innerText=user[index].gender;
     document.getElementById("image").src=user[index].image;
 }
+
+
+function randomuser()
+{
+    
+    fetch("https://randomuser.me/api/")
+    .then(function (rawData){
+        return rawData.json();
+    })
+    .then(function(jsonData){
+        var users=jsonData.results[0];
+        var gender=users.gender;
+        var fullname=users.name.title+" "+users.name.first+" "+users.name.last;
+        var image=users.picture.large;
+        document.getElementById("username").innerText=fullname;
+        document.getElementById("gender").innerText=gender;
+        document.getElementById("image").src=image;
+
+    })
+}
